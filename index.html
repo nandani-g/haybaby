@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pip · Junior Dream Engineer</title>
+  <meta name="description" content="Pip's portfolio at the Midnight Nursery. I build the dreams you fall asleep inside.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <canvas id="sparkles" aria-hidden="true"></canvas>
+
+  <div class="controls">
+    <button id="muteBtn" aria-pressed="true" aria-label="Toggle sound">🔇 Sound off</button>
+    <button id="themeBtn" aria-pressed="false" aria-label="Toggle day and night">🌙 Night</button>
+  </div>
+
+  <main>
+    <!-- 1. WHAT PIP IS -->
+    <section class="hero" id="top">
+      <svg id="pip" class="pip" viewBox="0 0 200 220" role="img" aria-label="Pip, a baby with a friendly skull face and a starry nightcap">
+        <!-- nightcap -->
+        <path d="M30 80 Q100 -20 170 80 Z" fill="var(--cap)"/>
+        <circle id="capStar" cx="150" cy="30" r="10" fill="#ffd966" style="cursor:pointer"/>
+        <circle cx="100" cy="18" r="9" fill="#ff9ec7"/>
+        <!-- skull head -->
+        <ellipse cx="100" cy="125" rx="72" ry="78" fill="#fff8ee" stroke="#d9cdb8" stroke-width="3"/>
+        <!-- eye sockets -->
+        <ellipse cx="70" cy="115" rx="22" ry="26" fill="#1b1a3a"/>
+        <ellipse cx="130" cy="115" rx="22" ry="26" fill="#1b1a3a"/>
+        <circle id="pupilL" cx="70" cy="115" r="6" fill="#ffe9a8"/>
+        <circle id="pupilR" cx="130" cy="115" r="6" fill="#ffe9a8"/>
+        <!-- nose + smile -->
+        <path d="M96 150 L104 150 L100 160 Z" fill="#1b1a3a"/>
+        <path id="mouth" d="M78 178 Q100 192 124 176" stroke="#1b1a3a" stroke-width="4" fill="none" stroke-linecap="round"/>
+      </svg>
+      <h1>Hi, I'm Pip!</h1>
+      <p class="tagline">“I build the dreams you fall asleep inside.”</p>
+      <p class="sub">A baby with a skull face. Curious, sleepy, a little clumsy. Giggles at everything, hates silence.</p>
+      <p class="hint">Move your mouse (or touch the screen) and Pip will look at you ↓</p>
+    </section>
+
+    <!-- 2. WHAT PIP DOES -->
+    <section id="work">
+      <h2>Pip's Work</h2>
+      <p class="sub">Junior Dream Engineer · Midnight Nursery</p>
+      <div class="cards">
+        <article class="card reveal">
+          <h3>🎵 The Lullaby Lab</h3>
+          <p>A tiny music box. Tap to hear Pip's lullaby.</p>
+          <button id="playLullaby">Wind the key</button>
+        </article>
+        <article class="card reveal">
+          <h3>🏮 Nightlight Collection</h3>
+          <p>Lamps for sleepy ghosts. Click one to switch it on.</p>
+          <div class="lamps">
+            <button class="lamp" aria-label="Moon lamp">🌙</button>
+            <button class="lamp" aria-label="Star lamp">⭐</button>
+            <button class="lamp" aria-label="Cloud lamp">☁️</button>
+          </div>
+        </article>
+        <article class="card reveal">
+          <h3>🧱 Rattle &amp; Block Toys</h3>
+          <p>Stack Pip's blocks. How high can you go?</p>
+          <div id="stack" class="stack" aria-live="polite"></div>
+          <button id="addBlock">Add block</button>
+          <button id="resetBlocks" class="ghost">Reset</button>
+        </article>
+      </div>
+    </section>
+
+    <!-- 3. PIP'S STORY (scroll scenes) -->
+    <section id="story">
+      <h2>Pip's Story</h2>
+      <div class="scene reveal"><span class="emoji">☁️</span><p>One quiet night, a cloud drifted over the nursery and left a baby named Pip.</p></div>
+      <div class="scene reveal"><span class="emoji">🔦</span><p>Pip found a dream lantern. Tiny lights flickered in the eye sockets. Giggle.</p></div>
+      <div class="scene reveal"><span class="emoji">🛠️</span><p>The Midnight Nursery hired Pip to build lullabies, nightlights and dreams.</p></div>
+      <div class="scene reveal"><span class="emoji">🚀</span><p>Next stop: delivering dreams to every rooftop in the neighbourhood.</p></div>
+    </section>
+
+    <section id="counter">
+      <p>Dreams delivered: <strong id="odometer">0000</strong></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Credits: Pip character © haX challenge (Track 1 canon). Site built with plain HTML/CSS/JS and Web Audio API. Add art/audio credits here.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
